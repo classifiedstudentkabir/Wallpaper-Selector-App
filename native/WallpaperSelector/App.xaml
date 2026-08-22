@@ -1,0 +1,21 @@
+<Application
+    x:Class="WallpaperSelector.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:WallpaperSelector"
+    RequestedTheme="Dark">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Fluent accent used by title bar, active slot cards and flyout. -->
+            <Color x:Key="AccentColor">#FF0078D4</Color>
+            <SolidColorBrush x:Key="AccentBrush" Color="{StaticResource AccentColor}" />
+
+            <local:ActiveSlotBorderConverter x:Key="ActiveSlotBorder" />
+            <local:BoolToVisibilityConverter2 x:Key="BoolToVis" />
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

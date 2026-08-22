@@ -1,0 +1,6 @@
+/**
+ * design2 re-uses the exact same stylesheet as the root prototype, so
+ * Design2App's referenced classes (mica-surface, animate-flyout, etc.)
+ * are always defined by the same source of truth.
+ */
+@import "../src/index.css";

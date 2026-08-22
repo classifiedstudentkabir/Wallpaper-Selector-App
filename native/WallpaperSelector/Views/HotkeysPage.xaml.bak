@@ -1,0 +1,55 @@
+<Page
+    x:Class="WallpaperSelector.Views.HotkeysPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="using:WallpaperSelector.Views"
+    mc:Ignorable="d"
+    Title="Global Hotkeys">
+
+    <ScrollViewer Margin="24,16,24,16" VerticalScrollBarVisibility="Auto">
+        <StackPanel>
+
+            <Grid Margin="0,0,0,16">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="Global Keyboard Shortcuts" FontSize="20" FontWeight="Bold" />
+                    <TextBlock Text="System-wide Win32 RegisterHotKey hooks — work from any app, even when minimized to tray."
+                               FontSize="12" Margin="0,4,0,0"
+                               Foreground="{ThemeResource TextFillColorSecondaryBrush}" />
+                </StackPanel>
+                <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                    <Button Click="OnTestPickerClick" Content="Test Picker (Win+Alt+W)" Margin="0,0,8,0"
+                            Style="{StaticResource AccentButtonStyle}" />
+                    <Button Click="OnReregisterClick" Content="Re-register All" />
+                </StackPanel>
+            </Grid>
+
+            <!-- Registration status pill -->
+            <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="10"
+                    Padding="16,12" Margin="0,0,0,16">
+                <StackPanel Orientation="Horizontal">
+                    <FontIcon x:Name="StatusGlyph" Glyph="&#xE943;" FontSize="14"
+                               Foreground="{ThemeResource SystemFillColorSuccessBrush}" />
+                    <TextBlock x:Name="StatusText" Text="Checking registration…" FontSize="12" Margin="8,0,0,0"
+                               VerticalAlignment="Center" />
+                </StackPanel>
+            </Border>
+
+            <!--
+            <Border Background="{ThemeResource CardBackgroundFillColorDefaultBrush}" CornerRadius="10" Padding="20,8">
+                <ItemsControl x:Name="BindingList">
+                </ItemsControl>
+            </Border>
+            -->
+
+            <TextBlock Margin="0,20,0,0" FontSize="11" TextWrapping="Wrap"
+                       Foreground="{ThemeResource TextFillColorSecondaryBrush}"
+                       Text="Implementation: HotkeyService.cs (WallpaperSelector.Core) — hidden message-only window on a dedicated pump thread; WM_HOTKEY (0x0312) dispatched with MOD_WIN | MOD_ALT. Re-register if another application claims a binding." />
+        </StackPanel>
+    </ScrollViewer>
+</Page>

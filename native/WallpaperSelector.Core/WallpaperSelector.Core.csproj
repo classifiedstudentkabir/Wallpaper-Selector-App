@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows10.0.19041.0</TargetFramework>
+    <Platforms>AnyCPU;x64</Platforms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>WallpaperSelector.Core</RootNamespace>
+    <AssemblyName>WallpaperSelector.Core</AssemblyName>
+    <Description>
+      Platform core for the Wallpaper Selector WinUI 3 application:
+      models, Win32/COM wallpaper services, storage persistence, thumbnail
+      generation, hotkey registration and MVVM view models.
+    </Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
+  </ItemGroup>
+
+</Project>
