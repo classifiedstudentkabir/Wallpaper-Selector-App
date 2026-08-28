@@ -1,0 +1,6 @@
+# KABIR Wallpaper Selector Environment
+
+Windows 10 Home (19045)
+.NET SDK 8.0.401
+Windows SDK 10.0.26100.0
+Framework: React/Vite (Architectural Mismatch)
